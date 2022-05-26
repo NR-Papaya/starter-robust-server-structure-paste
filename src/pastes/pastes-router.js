@@ -1,11 +1,7 @@
 const router = require("express").Router();
 const controller = require("./pastes-controller");
-const verifyBodyTextProperty = require("../utils/verifyBodyTextProperty")
 
-router.route("/")
-    .get(controller.list)
-    .post(verifyBodyTextProperty, controller.create)
-router.route("/:pasteId")
-    .get(controller.read)
+router.route("/").get(controller.list).post(controller.create);
+router.route("/:pasteId").get(controller.read).delete(controller.destroy)
 
 module.exports = router;

@@ -52,6 +52,7 @@ describe("path /pastes", () => {
 		it("creates a new paste and assigns id", async () => {
 			const newPaste = {
 				name: "String Reverse in JavaScript",
+				user_id:"55",
 				syntax: "Javascript",
 				expiration: 24,
 				exposure: "public",
