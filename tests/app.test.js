@@ -64,7 +64,7 @@ describe("path /pastes", () => {
 
 			expect(response.status).toBe(201);
 			expect(response.body.data).toEqual({
-				id: 5,
+				id: 1,
 				...newPaste,
 			});
 		});
