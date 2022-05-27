@@ -1,15 +1,14 @@
 const express = require("express");
 const app = express();
-const pastes = require("./data/pastes-data");
-const pastesRouter = require("./pastes/pastes-router")
-
+const pastesRouter = require("./pastes/pastes-router");
+const usersRouter = require("./users/users-router");
 // TODO: Follow instructions in the checkpoint to implement ths API.
 
 //built in middleware that adds a body property to the request req.body
 app.use(express.json());
 
-app.use("/pastes",pastesRouter);
-
+app.use("/pastes", pastesRouter);
+app.use("/users", usersRouter);
 // Not found handler
 app.use((request, response, next) => {
 	next({ status: 404, message: `Not found: ${request.originalUrl}` });
